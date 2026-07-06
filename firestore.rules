@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // NOTE: These rules are intentionally open so the classroom app works
+    // with zero backend/auth setup - anyone who has your Firebase config
+    // (which is public in the built site) could read or write data.
+    // That's an acceptable trade-off for a low-stakes classroom quiz tool.
+    // If you want tighter security later, add Firebase Authentication and
+    // restrict writes to signed-in teachers / matching student IDs.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

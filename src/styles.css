@@ -1,0 +1,398 @@
+/* ---------- Base / reset ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #111111;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.muted {
+  color: #666666;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dddddd;
+  margin: 1.5rem 0;
+}
+
+/* ---------- Page layout ---------- */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.center-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #111111;
+  text-decoration: none;
+  font-weight: 600;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid #111111;
+  background: #111111;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #111111;
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: #111111;
+}
+
+.btn-text {
+  background: transparent;
+  border: none;
+  color: #666666;
+  text-decoration: underline;
+  padding: 8px;
+}
+
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  align-items: center;
+}
+
+/* ---------- Form fields ---------- */
+.field-label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.text-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #111111;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111111;
+}
+
+.text-input-code {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.join-form {
+  width: 100%;
+  max-width: 340px;
+  text-align: left;
+}
+
+.error-text {
+  color: #b00020;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ---------- Quiz builder ---------- */
+.quiz-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quiz-card {
+  border: 2px solid #111111;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.question-card {
+  border: 2px solid #dddddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.question-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.option-row .text-input {
+  flex: 1;
+}
+
+/* ---------- Timer ---------- */
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.timer-bar-bg {
+  flex: 1;
+  height: 14px;
+  border: 2px solid #111111;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.timer-bar-fill {
+  height: 100%;
+  background: #111111;
+  transition: width 0.25s linear;
+}
+
+.timer-number {
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ---------- Options grid (questions) ---------- */
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .option-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.option-tile,
+.option-btn {
+  border: 2px solid #111111;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 1.1rem;
+  text-align: left;
+  background: #ffffff;
+  color: #111111;
+}
+
+.option-btn {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.option-btn:active {
+  background: #111111;
+  color: #ffffff;
+}
+
+.option-letter {
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+.typed-answer-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.typed-answer-form .text-input {
+  flex: 1;
+}
+
+.answer-feedback {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.result-correct {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.result-incorrect {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #666666;
+}
+
+.paused-banner {
+  display: inline-block;
+  border: 2px solid #111111;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+/* ---------- QR code ---------- */
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.qr-white-card {
+  background: #ffffff;
+  padding: 12px;
+  border: 2px solid #111111;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.qr-link {
+  font-size: 0.85rem;
+  color: #666666;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* ---------- Leaderboard ---------- */
+.leaderboard ol {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 2px solid #111111;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1.2rem;
+}
+
+.leaderboard-row .rank {
+  font-weight: 800;
+  width: 40px;
+}
+
+.leaderboard-row .name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.leaderboard-row .score {
+  font-weight: 800;
+}
+
+/* ---------- Teacher control panel ---------- */
+.control-links {
+  margin-top: 16px;
+}
+
+.control-question {
+  margin-top: 24px;
+}
+
+/* ---------- Projector / display screen ---------- */
+.display-page {
+  max-width: 1000px;
+  text-align: center;
+  padding-top: 48px;
+}
+
+.session-code-big {
+  font-size: 3rem;
+  letter-spacing: 8px;
+  margin-top: 8px;
+}
+
+.display-question {
+  font-size: 2.4rem;
+  margin: 20px 0;
+}
+
+@media (min-width: 900px) {
+  .display-question {
+    font-size: 3rem;
+  }
+  .option-tile {
+    font-size: 1.6rem;
+    padding: 28px;
+  }
+}
